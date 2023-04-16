@@ -12,7 +12,6 @@ public class Manager : MonoBehaviour
     public string[] Choices;
     public Sprite Fire, Water, Grass;
 
-    [SerializeField] TMP_Text infoText;
 
     public void Play(string myChoice)
     {
@@ -28,11 +27,11 @@ public class Manager : MonoBehaviour
                         break;
 
                     case "Water":
-                        Result.text = "It's not very effective...";
+                        Result.text = "It's super effective!";
                         break;
 
                     case "Grass":
-                        Result.text = "It's super effective!";
+                        Result.text = "It's not very effective...";
                         break;
                 }
 
@@ -44,7 +43,7 @@ public class Manager : MonoBehaviour
                 switch (myChoice)
                 {
                     case "Fire":
-                        Result.text = "It's super effective!";
+                        Result.text = "It's not very effective...";
                         break;
 
                     case "Water":
@@ -52,7 +51,7 @@ public class Manager : MonoBehaviour
                         break;
 
                     case "Grass":
-                        Result.text = "It's not very effective...";
+                        Result.text = "It's super effective!";
                         break;
                 }
 
@@ -64,7 +63,7 @@ public class Manager : MonoBehaviour
                 switch (myChoice)
                 {
                     case "Fire":
-                        Result.text = "It's not very effective...";
+                        Result.text = "It's super effective!";
                         break;
 
                     case "Water":
@@ -79,15 +78,6 @@ public class Manager : MonoBehaviour
                 AIChoice.sprite = Grass;
 
                 break;
-
-                IEnumerator DisplayWinnerAndRestart()
-                {
-                    yield return new WaitForSeconds(2f);
-                    infoText.gameObject.SetActive(true);
-
-                    yield return new WaitForSeconds(2f);
-                    infoText.gameObject.SetActive(false);
-                }
         }
     }
 }
