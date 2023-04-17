@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour
 {
@@ -79,5 +80,17 @@ public class Manager : MonoBehaviour
 
                 break;
         }
+
+        EndGame();
+    }
+
+    public void EndGame()
+    {
+        Invoke("GameOver", 1.5f);
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
